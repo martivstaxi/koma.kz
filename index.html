@@ -872,6 +872,12 @@
             letter-spacing: -0.5px;
         }
 
+        .section-subtitle {
+            font-size: 16px;
+            color: var(--text-gray);
+            margin-top: 10px;
+        }
+
         .advantages-grid {
             max-width: 1200px;
             margin: 0 auto;
@@ -988,10 +994,43 @@
             z-index: 1;
         }
 
+        /* Partners Section */
+        .partners {
+            padding: 80px 20px;
+            background: var(--bg-light);
+        }
+
+        .partners-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .partner-badge {
+            background: var(--bg-white);
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-dark);
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-fast);
+            border: 1px solid var(--gray-200);
+        }
+
+        .partner-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--accent-gold);
+        }
+
         /* Contact Section */
         .contact-section {
             padding: 80px 20px;
-            background: var(--bg-light);
+            background: var(--bg-white);
         }
 
         .contact-container {
@@ -1003,7 +1042,7 @@
         }
 
         .contact-card {
-            background: var(--bg-white);
+            background: var(--bg-light);
             border-radius: var(--border-radius);
             padding: 35px 25px;
             text-align: center;
@@ -1060,7 +1099,7 @@
         /* Location Section */
         .location {
             padding: 60px 20px;
-            background: var(--bg-white);
+            background: var(--bg-light);
         }
 
         .location-container {
@@ -1498,6 +1537,11 @@
                 font-size: 28px;
             }
 
+            .partner-badge {
+                padding: 8px 16px;
+                font-size: 13px;
+            }
+
             /* Mobile Footer */
             .footer-container {
                 grid-template-columns: 1fr;
@@ -1524,7 +1568,8 @@
             .brands,
             .contact-section,
             .location,
-            .delivery {
+            .delivery,
+            .partners {
                 padding: 60px 20px;
             }
         }
@@ -1734,6 +1779,7 @@
                     <li><a href="#delivery" class="nav-link" data-translate="navDelivery">Доставка</a></li>
                     <li><a href="#advantages" class="nav-link" data-translate="navAdvantages">Преимущества</a></li>
                     <li><a href="#brands" class="nav-link" data-translate="navBrands">Бренды</a></li>
+                    <li><a href="#partners" class="nav-link" data-translate="navPartners">Партнёры</a></li>
                     <li><a href="#contact" class="nav-link" data-translate="navContact">Контакты</a></li>
                 </ul>
             </nav>
@@ -1788,7 +1834,7 @@
                     <span class="btn-icon">📍</span>
                     <div class="btn-content">
                         <span class="btn-title" data-translate="btnLocation">Локация</span>
-                        <span class="btn-phone">Кар сити 1 ярус 112 бутик</span>
+                        <span class="btn-phone">ТЦ Car City 4 ярус 139 бутик</span>
                     </div>
                 </a>
             </div>
@@ -1828,7 +1874,7 @@
         </div>
     </section>
 
-    <!-- Delivery Section - NEW -->
+    <!-- Delivery Section -->
     <section class="delivery" id="delivery">
         <div class="section-header fade-in">
             <h2 class="section-title" data-translate="deliveryTitle">Условия бесплатной доставки</h2>
@@ -1921,6 +1967,79 @@
         </div>
     </section>
 
+    <!-- Partners Section -->
+    <section class="partners" id="partners">
+        <div class="section-header fade-in">
+            <h2 class="section-title" data-translate="partnersTitle">Наши партнёры</h2>
+            <p class="section-subtitle" data-translate="partnersSubtitle">Работаем с ведущими производителями автозапчастей</p>
+        </div>
+        <div class="partners-grid">
+            <div class="partner-badge">Mobis</div>
+            <div class="partner-badge">Genuine Parts</div>
+            <div class="partner-badge">NGK</div>
+            <div class="partner-badge">PHG</div>
+            <div class="partner-badge">PHC</div>
+            <div class="partner-badge">THC</div>
+            <div class="partner-badge">NAP</div>
+            <div class="partner-badge">SIB</div>
+            <div class="partner-badge">ATC</div>
+            <div class="partner-badge">Rhee Jiin</div>
+            <div class="partner-badge">POS</div>
+            <div class="partner-badge">KOS</div>
+            <div class="partner-badge">DONGIL</div>
+            <div class="partner-badge">Hi-q</div>
+            <div class="partner-badge">Hardron</div>
+            <div class="partner-badge">CTR</div>
+            <div class="partner-badge">HVCC</div>
+            <div class="partner-badge">Doowon</div>
+            <div class="partner-badge">Hanon</div>
+            <div class="partner-badge">GPC</div>
+            <div class="partner-badge">Kex</div>
+            <div class="partner-badge">GMB</div>
+            <div class="partner-badge">KorWheell</div>
+            <div class="partner-badge">Mando</div>
+            <div class="partner-badge">Motech</div>
+            <div class="partner-badge">ShinHwa</div>
+            <div class="partner-badge">TCIC</div>
+            <div class="partner-badge">UzDw</div>
+            <div class="partner-badge">Valeo</div>
+            <div class="partner-badge">Saul</div>
+            <div class="partner-badge">Seco</div>
+            <div class="partner-badge">ILJIIN</div>
+            <div class="partner-badge">Gen KorParts</div>
+            <div class="partner-badge">MobiParts</div>
+            <div class="partner-badge">Ossca</div>
+            <div class="partner-badge">TRT</div>
+            <div class="partner-badge">RS</div>
+            <div class="partner-badge">Hanging</div>
+            <div class="partner-badge">YPR</div>
+            <div class="partner-badge">NPR</div>
+            <div class="partner-badge">Yulim Tech</div>
+            <div class="partner-badge">YURA</div>
+            <div class="partner-badge">Shin Han</div>
+            <div class="partner-badge">Shap</div>
+            <div class="partner-badge">Seul Gasket</div>
+            <div class="partner-badge">Dong Yang Piston</div>
+            <div class="partner-badge">GM</div>
+            <div class="partner-badge">Geuone Yong</div>
+            <div class="partner-badge">GeoSung</div>
+            <div class="partner-badge">Gates</div>
+            <div class="partner-badge">INA</div>
+            <div class="partner-badge">DYG</div>
+            <div class="partner-badge">DYC</div>
+            <div class="partner-badge">Dong Sung Metal</div>
+            <div class="partner-badge">APC korea</div>
+            <div class="partner-badge">Anjun</div>
+            <div class="partner-badge">Bosch</div>
+            <div class="partner-badge">Besf1ts</div>
+            <div class="partner-badge">Contitech</div>
+            <div class="partner-badge">Koma Auto</div>
+            <div class="partner-badge">Denso</div>
+            <div class="partner-badge">DL korea</div>
+            <div class="partner-badge">Dongnam</div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section class="contact-section" id="contact">
         <div class="section-header fade-in">
@@ -1968,8 +2087,8 @@
         <div class="location-container">
             <div class="location-card fade-in">
                 <div class="location-icon">📍</div>
-                <h3 class="location-title" data-translate="locationName">1 ярус 112 бутик</h3>
-                <p class="location-address" data-translate="locationFloor"></p>
+                <h3 class="location-title" data-translate="locationName">ТЦ Car City</h3>
+                <p class="location-address" data-translate="locationFloor">4 ярус 139 бутик</p>
             </div>
         </div>
     </section>
@@ -1991,7 +2110,7 @@
             </div>
             <div class="footer-section">
                 <h3 data-translate="footerAddress">Адрес</h3>
-                <p data-translate="footerLocation">Кар сити<br>1 ярус 112 бутик</p>
+                <p data-translate="footerLocation">ТЦ Car City<br>4 ярус 139 бутик</p>
             </div>
             <div class="footer-section">
                 <h3 data-translate="footerSocial">Соцсети</h3>
@@ -2026,6 +2145,7 @@
                 navDelivery: 'Доставка',
                 navAdvantages: 'Преимущества',
                 navBrands: 'Бренды',
+                navPartners: 'Партнёры',
                 navContact: 'Контакты',
                 heroTitle: 'Надёжный поставщик запчастей для KIA, Hyundai и Chevrolet',
                 heroSubtitle: 'Работаем напрямую с проверенными производителями.',
@@ -2059,6 +2179,8 @@
                 advTitle6: 'Гарантия на установку',
                 advText6: 'качество подтверждено',
                 brandsTitle: 'Наши бренды',
+                partnersTitle: 'Наши партнёры',
+                partnersSubtitle: 'Работаем с ведущими производителями автозапчастей',
                 contactTitle: 'Контакты',
                 phoneLabel: 'Розничный отдел продаж',
                 wholesaleLabel: 'Оптовый отдел продаж',
@@ -2067,12 +2189,12 @@
                 emailLabel: 'Email',
                 instagramLabel: 'Instagram',
                 locationTitle: 'Car City',
-                locationName: '1 ярус 112 бутик',
-                locationFloor: '',
+                locationName: 'ТЦ Car City',
+                locationFloor: '4 ярус 139 бутик',
                 footerDesc: 'Надёжный поставщик запчастей<br>для KIA, Hyundai и Chevrolet',
                 footerContacts: 'Контакты',
                 footerAddress: 'Адрес',
-                footerLocation: 'Кар сити<br>1 ярус 112 бутик',
+                footerLocation: 'ТЦ Car City<br>4 ярус 139 бутик',
                 footerSocial: 'Соцсети'
             },
             kk: {
@@ -2085,6 +2207,7 @@
                 navDelivery: 'Жеткізу',
                 navAdvantages: 'Артықшылықтар',
                 navBrands: 'Брендтер',
+                navPartners: 'Серіктестер',
                 navContact: 'Байланыс',
                 heroTitle: 'KIA, Hyundai және Chevrolet үшін сенімді бөлшектер жеткізуші',
                 heroSubtitle: 'Тексерілген өндірушілермен тікелей жұмыс істейміз.',
@@ -2118,6 +2241,8 @@
                 advTitle6: 'Орнатуға кепілдік',
                 advText6: 'сапа расталған',
                 brandsTitle: 'Біздің брендтер',
+                partnersTitle: 'Біздің серіктестер',
+                partnersSubtitle: 'Жетекші автобөлшектер өндірушілерімен жұмыс істейміз',
                 contactTitle: 'Байланыс',
                 phoneLabel: 'Бөлшек сату бөлімі',
                 wholesaleLabel: 'Көтерме сату бөлімі',
@@ -2126,12 +2251,12 @@
                 emailLabel: 'Email',
                 instagramLabel: 'Instagram',
                 locationTitle: 'Car City',
-                locationName: '1 қабат 112 бутик',
-                locationFloor: '',
+                locationName: 'ТЦ Car City',
+                locationFloor: '4 қабат 139 бутик',
                 footerDesc: 'KIA, Hyundai және Chevrolet<br>үшін сенімді бөлшектер жеткізуші',
                 footerContacts: 'Байланыс',
                 footerAddress: 'Мекенжай',
-                footerLocation: 'Кар сити<br>1 қабат 112 бутик',
+                footerLocation: 'ТЦ Car City<br>4 қабат 139 бутик',
                 footerSocial: 'Әлеуметтік желілер'
             },
             en: {
@@ -2144,6 +2269,7 @@
                 navDelivery: 'Delivery',
                 navAdvantages: 'Advantages',
                 navBrands: 'Brands',
+                navPartners: 'Partners',
                 navContact: 'Contact',
                 heroTitle: 'Reliable supplier of spare parts for KIA, Hyundai and Chevrolet',
                 heroSubtitle: 'We work directly with trusted manufacturers.',
@@ -2177,6 +2303,8 @@
                 advTitle6: 'Installation warranty',
                 advText6: 'quality confirmed',
                 brandsTitle: 'Our brands',
+                partnersTitle: 'Our partners',
+                partnersSubtitle: 'Working with leading auto parts manufacturers',
                 contactTitle: 'Contacts',
                 phoneLabel: 'Retail sales department',
                 wholesaleLabel: 'Wholesale sales department',
@@ -2185,12 +2313,12 @@
                 emailLabel: 'Email',
                 instagramLabel: 'Instagram',
                 locationTitle: 'Car City',
-                locationName: '1st floor boutique 112',
-                locationFloor: '',
+                locationName: 'Car City Mall',
+                locationFloor: '4th floor boutique 139',
                 footerDesc: 'Reliable parts supplier<br>for KIA, Hyundai and Chevrolet',
                 footerContacts: 'Contacts',
                 footerAddress: 'Address',
-                footerLocation: 'Car City<br>1st floor boutique 112',
+                footerLocation: 'Car City Mall<br>4th floor boutique 139',
                 footerSocial: 'Social media'
             },
             tr: {
@@ -2203,6 +2331,7 @@
                 navDelivery: 'Teslimat',
                 navAdvantages: 'Avantajlar',
                 navBrands: 'Markalar',
+                navPartners: 'Ortaklar',
                 navContact: 'İletişim',
                 heroTitle: 'KIA, Hyundai ve Chevrolet için güvenilir yedek parça tedarikçisi',
                 heroSubtitle: 'Güvenilir üreticilerle doğrudan çalışıyoruz.',
@@ -2236,6 +2365,8 @@
                 advTitle6: 'Montaj garantisi',
                 advText6: 'kalite onaylandı',
                 brandsTitle: 'Markalarımız',
+                partnersTitle: 'Ortaklarımız',
+                partnersSubtitle: 'Önde gelen otomotiv parça üreticileriyle çalışıyoruz',
                 contactTitle: 'İletişim',
                 phoneLabel: 'Perakende satış departmanı',
                 wholesaleLabel: 'Toptan satış departmanı',
@@ -2244,191 +2375,188 @@
                 emailLabel: 'E-posta',
                 instagramLabel: 'Instagram',
                 locationTitle: 'Car City',
-                locationName: '1. kat 112 numaralı butik',
-                locationFloor: '',
+                locationName: 'Car City AVM',
+                locationFloor: '4. kat 139 numaralı butik',
                 footerDesc: 'KIA, Hyundai ve Chevrolet için<br>güvenilir yedek parça tedarikçisi',
                 footerContacts: 'İletişim',
                 footerAddress: 'Adres',
-                footerLocation: 'Car City<br>1. kat 112 numaralı butik',
+                footerLocation: 'Car City AVM<br>4. kat 139 numaralı butik',
                 footerSocial: 'Sosyal medya'
-            }
-        };
-
+                }
+                };
         let currentLang = 'ru';
 
-        // Detect browser language
-        function detectLanguage() {
-            const browserLang = navigator.language.toLowerCase();
-            const storedLang = localStorage.getItem('selectedLanguage');
-            
-            if (storedLang && translations[storedLang]) {
-                return storedLang;
+    // Detect browser language
+    function detectLanguage() {
+        const browserLang = navigator.language.toLowerCase();
+        const storedLang = localStorage.getItem('selectedLanguage');
+        
+        if (storedLang && translations[storedLang]) {
+            return storedLang;
+        }
+        
+        return 'ru';
+    }
+
+    // Update page language
+    function updateLanguage(lang) {
+        if (!translations[lang]) return;
+        
+        currentLang = lang;
+        localStorage.setItem('selectedLanguage', lang);
+        
+        // Update lang button
+        document.getElementById('currentLangFlag').textContent = '🇰🇿';
+        document.getElementById('currentLangName').textContent = lang.toUpperCase();
+        
+        // Update all translatable elements
+        document.querySelectorAll('[data-translate]').forEach(element => {
+            const key = element.getAttribute('data-translate');
+            if (translations[lang][key]) {
+                element.innerHTML = translations[lang][key];
             }
-            
-            return 'ru';
-        }
+        });
+        
+        // Update HTML lang attribute
+        document.documentElement.lang = lang === 'kk' ? 'kk' : lang;
+    }
 
-        // Update page language
-        function updateLanguage(lang) {
-            if (!translations[lang]) return;
-            
-            currentLang = lang;
-            localStorage.setItem('selectedLanguage', lang);
-            
-            // Update lang button
-            document.getElementById('currentLangFlag').textContent = '🇰🇿';
-            document.getElementById('currentLangName').textContent = lang.toUpperCase();
-            
-            // Update all translatable elements
-            document.querySelectorAll('[data-translate]').forEach(element => {
-                const key = element.getAttribute('data-translate');
-                if (translations[lang][key]) {
-                    element.innerHTML = translations[lang][key];
-                }
-            });
-            
-            // Update HTML lang attribute
-            document.documentElement.lang = lang === 'kk' ? 'kk' : lang;
-        }
-
-        // Initialize language selector
-        function initLanguageSelector() {
-            const langDropdown = document.getElementById('langDropdown');
-            const langBtn = document.getElementById('langBtn');
-            
-            // Create language items
-            Object.entries(translations).forEach(([code, lang]) => {
-                const item = document.createElement('div');
-                item.className = 'lang-item';
-                item.dataset.lang = code;
-                item.innerHTML = `<span class="lang-flag">${lang.flag}</span><span>${lang.name}</span>`;
-                item.onclick = () => {
-                    updateLanguage(code);
-                    langDropdown.classList.remove('show');
-                };
-                langDropdown.appendChild(item);
-            });
-            
-            // Toggle dropdown
-            langBtn.onclick = (e) => {
-                e.stopPropagation();
-                langDropdown.classList.toggle('show');
+    // Initialize language selector
+    function initLanguageSelector() {
+        const langDropdown = document.getElementById('langDropdown');
+        const langBtn = document.getElementById('langBtn');
+        
+        // Create language items
+        Object.entries(translations).forEach(([code, lang]) => {
+            const item = document.createElement('div');
+            item.className = 'lang-item';
+            item.dataset.lang = code;
+            item.innerHTML = `<span class="lang-flag">${lang.flag}</span><span>${lang.name}</span>`;
+            item.onclick = () => {
+                updateLanguage(code);
+                langDropdown.classList.remove('show');
             };
-            
-            // Close on outside click
-            document.addEventListener('click', (e) => {
-                if (!e.target.closest('.lang-selector')) {
-                    langDropdown.classList.remove('show');
-                }
-            });
-        }
-
-        // Initialize
-        document.addEventListener('DOMContentLoaded', function() {
-            // Hide loading screen
-            setTimeout(() => {
-                const loadingScreen = document.getElementById('loadingScreen');
-                if (loadingScreen) {
-                    loadingScreen.classList.add('hidden');
-                    setTimeout(() => {
-                        loadingScreen.style.display = 'none';
-                    }, 500);
-                }
-            }, 500);
-            
-            // Initialize language
-            initLanguageSelector();
-            const detectedLang = detectLanguage();
-            updateLanguage(detectedLang);
-            
-            // Scroll animations
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, observerOptions);
-            
-            // Observe all animated elements
-            document.querySelectorAll('.fade-in, .scale-in').forEach(el => {
-                observer.observe(el);
-            });
-            
-            // Smooth scroll for navigation
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        const headerOffset = 80;
-                        const elementPosition = target.getBoundingClientRect().top;
-                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                        
-                        window.scrollTo({
-                            top: offsetPosition,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-            
-            // Active navigation link
-            const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('.nav-link');
-            
-            window.addEventListener('scroll', () => {
-                let current = '';
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop - 100;
-                    const sectionHeight = section.clientHeight;
-                    if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
-                        current = section.getAttribute('id');
-                    }
-                });
-                
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href').slice(1) === current) {
-                        link.classList.add('active');
-                    }
-                });
-            });
-            
-            // Scroll indicator
-            const scrollIndicator = document.querySelector('.scroll-indicator');
-            if (scrollIndicator) {
-                scrollIndicator.addEventListener('click', () => {
-                    const servicesSection = document.querySelector('#services');
-                    if (servicesSection) {
-                        servicesSection.scrollIntoView({ behavior: 'smooth' });
-                    }
-                });
+            langDropdown.appendChild(item);
+        });
+        
+        // Toggle dropdown
+        langBtn.onclick = (e) => {
+            e.stopPropagation();
+            langDropdown.classList.toggle('show');
+        };
+        
+        // Close on outside click
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.lang-selector')) {
+                langDropdown.classList.remove('show');
             }
-            
-            // Scroll to top button
-            const scrollToTop = document.getElementById('scrollToTop');
-            
-            window.addEventListener('scroll', () => {
-                if (window.pageYOffset > 300) {
-                    scrollToTop.classList.add('visible');
-                } else {
-                    scrollToTop.classList.remove('visible');
+        });
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', function() {
+        // Hide loading screen
+        setTimeout(() => {
+            const loadingScreen = document.getElementById('loadingScreen');
+            if (loadingScreen) {
+                loadingScreen.classList.add('hidden');
+                setTimeout(() => {
+                    loadingScreen.style.display = 'none';
+                }, 500);
+            }
+        }, 500);
+        
+        // Initialize language
+        initLanguageSelector();
+        const detectedLang = detectLanguage();
+        updateLanguage(detectedLang);
+        
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
                 }
             });
-            
-            scrollToTop.addEventListener('click', () => {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
+        }, observerOptions);
+        
+        // Observe all animated elements
+        document.querySelectorAll('.fade-in, .scale-in').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
-    </script>
-</body>
-</html>
+        
+        // Active navigation link
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Scroll indicator
+        const scrollIndicator = document.querySelector('.scroll-indicator');
+        if (scrollIndicator) {
+            scrollIndicator.addEventListener('click', () => {
+                const servicesSection = document.querySelector('#services');
+                if (servicesSection) {
+                    servicesSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        }
+        
+        // Scroll to top button
+        const scrollToTop = document.getElementById('scrollToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTop.classList.add('visible');
+            } else {
+                scrollToTop.classList.remove('visible');
+            }
+        });
+        
+        scrollToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
