@@ -353,7 +353,7 @@
             align-items: center;
             justify-content: center;
             min-height: calc(100vh - 200px);
-            padding-bottom: 80px; /* Scroll indicator için alan */
+            padding-bottom: 80px;
         }
 
         .hero-title {
@@ -690,19 +690,6 @@
             box-shadow: 0 12px 35px rgba(26, 77, 122, 0.15);
         }
 
-        /* Icon animations */
-        .btn-icon {
-            font-size: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform var(--transition-base);
-        }
-
-        .hero-btn:hover .btn-icon {
-            transform: scale(1.1) rotate(5deg);
-        }
-
         /* Arrow indicator for clickability */
         .hero-btn::after {
             content: '→';
@@ -723,37 +710,7 @@
             color: var(--accent-gold);
         }
 
-        .btn-content {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .btn-title {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--text-dark);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 4px;
-        }
-
-        .btn-phone {
-            font-size: 16px;
-            font-weight: 700;
-            color: var(--primary-color);
-        }
-
-        .hero-btn.whatsapp .btn-title,
-        .hero-btn.whatsapp .btn-phone {
-            color: white;
-        }
-
-        .hero-btn.whatsapp .btn-phone {
-            opacity: 0.95;
-        }
-
-        /* Services Section (after brands) */
+        /* Services Section */
         .services {
             padding: 80px 20px;
             background: var(--bg-white);
@@ -802,19 +759,6 @@
             line-height: 1.6;
         }
 
-        /* Remove old hero-features styles */
-        .hero-features {
-            display: none;
-        }
-
-        .hero-feature {
-            display: none;
-        }
-
-        .hero-cta {
-            display: none;
-        }
-
         /* Scroll Animations */
         .fade-in {
             opacity: 0;
@@ -836,6 +780,77 @@
         .scale-in.visible {
             opacity: 1;
             transform: scale(1);
+        }
+
+        /* Delivery Section - NEW */
+        .delivery {
+            padding: 80px 20px;
+            background: var(--bg-white);
+        }
+
+        .delivery-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .delivery-card {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: var(--border-radius);
+            padding: 35px 30px;
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+            transition: all var(--transition-base);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .delivery-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 15s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .delivery-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg), 0 0 40px rgba(201, 169, 97, 0.3);
+        }
+
+        .delivery-icon {
+            font-size: 42px;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .delivery-amount {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            color: var(--accent-gold);
+            position: relative;
+            z-index: 1;
+        }
+
+        .delivery-text {
+            font-size: 15px;
+            line-height: 1.5;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
         }
 
         /* Advantages Section */
@@ -885,12 +900,6 @@
             font-size: 48px;
             margin-bottom: 20px;
             display: inline-block;
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
         }
 
         .advantage-title {
@@ -942,11 +951,6 @@
             height: 200%;
             background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
             animation: rotate 15s linear infinite;
-        }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
         }
 
         .brand-card:hover {
@@ -1270,7 +1274,7 @@
         @media (max-width: 768px) {
             /* Mobile Header */
             header {
-                position: relative; /* Sticky değil, normal akış içinde */
+                position: relative;
                 padding: 10px 0;
             }
 
@@ -1289,7 +1293,7 @@
             }
 
             .logo-subtitle {
-                display: none; /* Mobilde subtitle gizleniyor */
+                display: none;
             }
 
             .lang-btn {
@@ -1298,7 +1302,7 @@
             }
 
             .lang-btn span#currentLangName {
-                display: none; /* Sadece bayrak görünsün */
+                display: none;
             }
 
             .lang-dropdown {
@@ -1465,6 +1469,10 @@
                 grid-template-columns: 1fr;
             }
 
+            .delivery-grid {
+                grid-template-columns: 1fr;
+            }
+
             .brands-grid {
                 grid-template-columns: repeat(3, 1fr);
                 gap: 12px;
@@ -1515,7 +1523,8 @@
             .advantages,
             .brands,
             .contact-section,
-            .location {
+            .location,
+            .delivery {
                 padding: 60px 20px;
             }
         }
@@ -1678,7 +1687,8 @@
             }
 
             .advantage-card,
-            .contact-card {
+            .contact-card,
+            .delivery-card {
                 padding: 25px 20px;
             }
         }
@@ -1721,6 +1731,7 @@
                 <ul class="nav-links">
                     <li><a href="#hero" class="nav-link active" data-translate="navHome">Главная</a></li>
                     <li><a href="#services" class="nav-link" data-translate="navServices">Услуги</a></li>
+                    <li><a href="#delivery" class="nav-link" data-translate="navDelivery">Доставка</a></li>
                     <li><a href="#advantages" class="nav-link" data-translate="navAdvantages">Преимущества</a></li>
                     <li><a href="#brands" class="nav-link" data-translate="navBrands">Бренды</a></li>
                     <li><a href="#contact" class="nav-link" data-translate="navContact">Контакты</a></li>
@@ -1752,17 +1763,17 @@
                 </p>
             </div>
             <div class="hero-buttons">
-                <a href="tel:+77771723377" class="hero-btn primary">
-                    <span class="btn-icon">📞</span>
+                <a href="https://wa.me/77771723377" class="hero-btn primary">
+                    <span class="btn-icon">💬</span>
                     <div class="btn-content">
-                        <span class="btn-title" data-translate="btnChassis">Ходовая часть</span>
+                        <span class="btn-title" data-translate="btnRetail">Розничный отдел продаж</span>
                         <span class="btn-phone">+7 777 172 33 77</span>
                     </div>
                 </a>
-                <a href="tel:+77078383086" class="hero-btn primary">
-                    <span class="btn-icon">📞</span>
+                <a href="https://wa.me/77078383086" class="hero-btn primary">
+                    <span class="btn-icon">💬</span>
                     <div class="btn-content">
-                        <span class="btn-title" data-translate="btnEngine">Запчасти двигателя</span>
+                        <span class="btn-title" data-translate="btnWholesale">Оптовый отдел продаж</span>
                         <span class="btn-phone">+7 707 838 30 86</span>
                     </div>
                 </a>
@@ -1817,38 +1828,82 @@
         </div>
     </section>
 
+    <!-- Delivery Section - NEW -->
+    <section class="delivery" id="delivery">
+        <div class="section-header fade-in">
+            <h2 class="section-title" data-translate="deliveryTitle">Условия бесплатной доставки</h2>
+        </div>
+        <div class="delivery-grid">
+            <div class="delivery-card scale-in">
+                <div class="delivery-icon">🚚</div>
+                <div class="delivery-amount">75 000 ₸</div>
+                <p class="delivery-text" data-translate="deliveryAlmaty">
+                    Бесплатная доставка по г. Алматы при заказе от этой суммы
+                </p>
+            </div>
+            <div class="delivery-card scale-in">
+                <div class="delivery-icon">🚛</div>
+                <div class="delivery-amount">150 000 ₸</div>
+                <p class="delivery-text" data-translate="deliveryRegion">
+                    Бесплатная доставка по области Алматы при заказе от этой суммы
+                </p>
+            </div>
+            <div class="delivery-card scale-in">
+                <div class="delivery-icon">🌍</div>
+                <div class="delivery-amount">200 000 ₸</div>
+                <p class="delivery-text" data-translate="deliveryInternational">
+                    Бесплатная доставка по Казахстану, до г. Ташкента и г. Бишкека при заказе от этой суммы
+                </p>
+            </div>
+        </div>
+    </section>
+
     <!-- Advantages -->
     <section class="advantages" id="advantages">
         <div class="section-header fade-in">
-            <h2 class="section-title" data-translate="advantagesTitle">Почему выбирают нас</h2>
+            <h2 class="section-title" data-translate="advantagesTitle">Наши преимущества</h2>
         </div>
         <div class="advantages-grid">
             <div class="advantage-card scale-in">
-                <div class="advantage-icon">✓</div>
-                <h3 class="advantage-title" data-translate="advTitle1">Оригинальные запчасти</h3>
+                <div class="advantage-icon">📦</div>
+                <h3 class="advantage-title" data-translate="advTitle1">Более 22000 наименований</h3>
                 <p class="advantage-text" data-translate="advText1">
-                    Работаем с проверенными производителями
+                    товаров в наличии
                 </p>
             </div>
             <div class="advantage-card scale-in">
                 <div class="advantage-icon">⚡</div>
-                <h3 class="advantage-title" data-translate="advTitle2">Оперативная отгрузка</h3>
+                <h3 class="advantage-title" data-translate="advTitle2">На заказ</h3>
                 <p class="advantage-text" data-translate="advText2">
-                    Большой ассортимент в наличии
+                    минимальные сроки
+                </p>
+            </div>
+            <div class="advantage-card scale-in">
+                <div class="advantage-icon">🎯</div>
+                <h3 class="advantage-title" data-translate="advTitle3">Профессиональный подбор</h3>
+                <p class="advantage-text" data-translate="advText3">
+                    автозапчастей
+                </p>
+            </div>
+            <div class="advantage-card scale-in">
+                <div class="advantage-icon">💳</div>
+                <h3 class="advantage-title" data-translate="advTitle4">Любой способ оплаты</h3>
+                <p class="advantage-text" data-translate="advText4">
+                    наличные, безналичные, карты
+                </p>
+            </div>
+            <div class="advantage-card scale-in">
+                <div class="advantage-icon">📄</div>
+                <h3 class="advantage-title" data-translate="advTitle5">Полный пакет документов</h3>
+                <p class="advantage-text" data-translate="advText5">
+                    на все товары
                 </p>
             </div>
             <div class="advantage-card scale-in">
                 <div class="advantage-icon">🛡️</div>
-                <h3 class="advantage-title" data-translate="advTitle3">Гарантия качества</h3>
-                <p class="advantage-text" data-translate="advText3">
-                    Официальная гарантия на все детали
-                </p>
-            </div>
-            <div class="advantage-card scale-in">
-                <div class="advantage-icon">👨‍🔧</div>
-                <h3 class="advantage-title" data-translate="advTitle4">Поддержка</h3>
-                <p class="advantage-text" data-translate="advText4">
-                    Консультация на каждом этапе
+                <h3 class="advantage-title" data-translate="advTitle6">Гарантия на установку</h3>
+                <p class="advantage-text" data-translate="advText6">
+                    качество подтверждено
                 </p>
             </div>
         </div>
@@ -1873,15 +1928,19 @@
         </div>
         <div class="contact-container">
             <div class="contact-card scale-in">
-                <div class="contact-icon">📞</div>
-                <div class="contact-label" data-translate="phoneLabel">Телефоны</div>
+                <div class="contact-icon">💬</div>
+                <div class="contact-label" data-translate="phoneLabel">Розничный отдел продаж</div>
                 <div class="contact-value">
-                    <a href="tel:+77771723377">+7 777 172 33 77</a>
-                    <small data-translate="phoneDept1">Отдел ходовой части</small>
+                    <a href="https://wa.me/77771723377">+7 777 172 33 77</a>
+                    <small data-translate="phoneDept1">WhatsApp</small>
                 </div>
+            </div>
+            <div class="contact-card scale-in">
+                <div class="contact-icon">💬</div>
+                <div class="contact-label" data-translate="wholesaleLabel">Оптовый отдел продаж</div>
                 <div class="contact-value">
-                    <a href="tel:+77078383086">+7 707 838 30 86</a>
-                    <small data-translate="phoneDept2">Отдел запчастей двигателя</small>
+                    <a href="https://wa.me/77078383086">+7 707 838 30 86</a>
+                    <small data-translate="phoneDept2">WhatsApp</small>
                 </div>
             </div>
             <div class="contact-card scale-in">
@@ -1896,13 +1955,6 @@
                 <div class="contact-label" data-translate="instagramLabel">Instagram</div>
                 <div class="contact-value">
                     <a href="https://instagram.com/koma_auto" target="_blank">@koma_auto</a>
-                </div>
-            </div>
-            <div class="contact-card scale-in">
-                <div class="contact-icon">💬</div>
-                <div class="contact-label" data-translate="messengerLabel">WhatsApp и Telegram</div>
-                <div class="contact-value">
-                    <a href="https://wa.me/77771723377" target="_blank">+7 777 172 33 77</a>
                 </div>
             </div>
         </div>
@@ -1933,8 +1985,8 @@
             </div>
             <div class="footer-section">
                 <h3 data-translate="footerContacts">Контакты</h3>
-                <a href="tel:+77771723377">+7 777 172 33 77</a>
-                <a href="tel:+77078383086">+7 707 838 30 86</a>
+                <a href="https://wa.me/77771723377">+7 777 172 33 77</a>
+                <a href="https://wa.me/77078383086">+7 707 838 30 86</a>
                 <a href="mailto:kamoliddint@gmail.com">kamoliddint@gmail.com</a>
             </div>
             <div class="footer-section">
@@ -1971,22 +2023,17 @@
                 logoSubtitle: 'НАДЁЖНЫЙ ПОСТАВЩИК ЗАПЧАСТЕЙ',
                 navHome: 'Главная',
                 navServices: 'Услуги',
+                navDelivery: 'Доставка',
                 navAdvantages: 'Преимущества',
                 navBrands: 'Бренды',
                 navContact: 'Контакты',
                 heroTitle: 'Надёжный поставщик запчастей для KIA, Hyundai и Chevrolet',
                 heroSubtitle: 'Работаем напрямую с проверенными производителями.',
                 heroDescription: 'Предлагаем оптимальные условия, оперативную отгрузку и поддержку на каждом этапе.',
-                btnChassis: 'Ходовая часть',
-                btnEngine: 'Запчасти двигателя',
+                btnRetail: 'Розничный отдел продаж',
+                btnWholesale: 'Оптовый отдел продаж',
                 btnLocation: 'Локация',
-                btnWhatsApp: 'Написать сообщение',
-                btnLocation: 'Локация',
-                btnLocationSub: 'Посмотреть на карте',
-                btnBrands: 'Наши бренды',
-                btnBrandsSub: 'KIA • Hyundai • Chevrolet',
                 scrollDown: 'ВНИЗ',
-                heroCta: 'Связаться с нами',
                 servicesTitle: 'Наши услуги',
                 serviceTitle1: 'Ходовая часть',
                 serviceText1: 'Полный ассортимент деталей подвески и рулевого управления',
@@ -1994,24 +2041,31 @@
                 serviceText2: 'Все компоненты для ремонта и обслуживания двигателя',
                 serviceTitle3: 'Гарантия качества',
                 serviceText3: 'Официальная гарантия на все детали',
-                advantagesTitle: 'Почему выбирают нас',
-                advTitle1: 'Оригинальные запчасти',
-                advText1: 'Работаем с проверенными производителями',
-                advTitle2: 'Оперативная отгрузка',
-                advText2: 'Большой ассортимент в наличии',
-                advTitle3: 'Гарантия качества',
-                advText3: 'Официальная гарантия на все детали',
-                advTitle4: 'Поддержка',
-                advText4: 'Консультация на каждом этапе',
+                deliveryTitle: 'Условия бесплатной доставки',
+                deliveryAlmaty: 'Бесплатная доставка по г. Алматы при заказе от этой суммы',
+                deliveryRegion: 'Бесплатная доставка по области Алматы при заказе от этой суммы',
+                deliveryInternational: 'Бесплатная доставка по Казахстану, до г. Ташкента и г. Бишкека при заказе от этой суммы',
+                advantagesTitle: 'Наши преимущества',
+                advTitle1: 'Более 22000 наименований',
+                advText1: 'товаров в наличии',
+                advTitle2: 'На заказ',
+                advText2: 'минимальные сроки',
+                advTitle3: 'Профессиональный подбор',
+                advText3: 'автозапчастей',
+                advTitle4: 'Любой способ оплаты',
+                advText4: 'наличные, безналичные, карты',
+                advTitle5: 'Полный пакет документов',
+                advText5: 'на все товары',
+                advTitle6: 'Гарантия на установку',
+                advText6: 'качество подтверждено',
                 brandsTitle: 'Наши бренды',
-                brandNote: 'KIA • Hyundai • Chevrolet',
                 contactTitle: 'Контакты',
-                phoneLabel: 'Телефоны',
-                phoneDept1: 'Отдел ходовой части',
-                phoneDept2: 'Отдел запчастей двигателя',
+                phoneLabel: 'Розничный отдел продаж',
+                wholesaleLabel: 'Оптовый отдел продаж',
+                phoneDept1: 'WhatsApp',
+                phoneDept2: 'WhatsApp',
                 emailLabel: 'Email',
                 instagramLabel: 'Instagram',
-                messengerLabel: 'WhatsApp и Telegram',
                 locationTitle: 'Car City',
                 locationName: '1 ярус 112 бутик',
                 locationFloor: '',
@@ -2028,22 +2082,17 @@
                 logoSubtitle: 'СЕНІМДІ БӨЛШЕКТЕР ЖЕТКІЗУШІ',
                 navHome: 'Басты бет',
                 navServices: 'Қызметтер',
+                navDelivery: 'Жеткізу',
                 navAdvantages: 'Артықшылықтар',
                 navBrands: 'Брендтер',
                 navContact: 'Байланыс',
                 heroTitle: 'KIA, Hyundai және Chevrolet үшін сенімді бөлшектер жеткізуші',
                 heroSubtitle: 'Тексерілген өндірушілермен тікелей жұмыс істейміз.',
                 heroDescription: 'Оңтайлы жағдайлар, жедел жөнелту және әр кезеңде қолдау ұсынамыз.',
-                btnChassis: 'Жүріс бөлігі',
-                btnEngine: 'Қозғалтқыш бөлшектері',
+                btnRetail: 'Бөлшек сату бөлімі',
+                btnWholesale: 'Көтерме сату бөлімі',
                 btnLocation: 'Орналасу',
-                btnWhatsApp: 'Хабарлама жазу',
-                btnLocation: 'Орналасқан жері',
-                btnLocationSub: 'Картадан қарау',
-                btnBrands: 'Біздің брендтер',
-                btnBrandsSub: 'KIA • Hyundai • Chevrolet',
                 scrollDown: 'ТӨМЕН',
-                heroCta: 'Бізбен байланысу',
                 servicesTitle: 'Біздің қызметтер',
                 serviceTitle1: 'Жүріс бөлігі',
                 serviceText1: 'Аспа және рульдік басқару бөлшектерінің толық ассортименті',
@@ -2051,23 +2100,31 @@
                 serviceText2: 'Қозғалтқышты жөндеу және қызмет көрсету үшін барлық компоненттер',
                 serviceTitle3: 'Сапа кепілдігі',
                 serviceText3: 'Барлық бөлшектерге ресми кепілдік',
-                advantagesTitle: 'Неліктен бізді таңдайды',
-                advTitle1: 'Түпнұсқа бөлшектер',
-                advText1: 'Тексерілген өндірушілермен жұмыс істейміз',
-                advTitle2: 'Жедел жөнелту',
-                advText2: 'Қоймада үлкен ассортимент',
-                advTitle3: 'Сапа кепілдігі',
-                advText3: 'Барлық бөлшектерге ресми кепілдік',
-                advTitle4: 'Қолдау',
-                advText4: 'Әр кезеңде кеңес беру',
+                deliveryTitle: 'Тегін жеткізу шарттары',
+                deliveryAlmaty: 'Алматы қаласы бойынша осы соманан тапсырыс берген кезде тегін жеткізу',
+                deliveryRegion: 'Алматы облысы бойынша осы соманан тапсырыс берген кезде тегін жеткізу',
+                deliveryInternational: 'Қазақстан бойынша, Ташкент және Бішкек қалаларына дейін осы соманан тапсырыс берген кезде тегін жеткізу',
+                advantagesTitle: 'Біздің артықшылықтар',
+                advTitle1: '22000-нан астам атау',
+                advText1: 'қоймада бар',
+                advTitle2: 'Тапсырыс бойынша',
+                advText2: 'минималды мерзім',
+                advTitle3: 'Кәсіби таңдау',
+                advText3: 'автобөлшектер',
+                advTitle4: 'Кез келген төлем түрі',
+                advText4: 'қолма-қол, қолма-қол емес, карталар',
+                advTitle5: 'Құжаттардың толық пакеті',
+                advText5: 'барлық тауарларға',
+                advTitle6: 'Орнатуға кепілдік',
+                advText6: 'сапа расталған',
                 brandsTitle: 'Біздің брендтер',
                 contactTitle: 'Байланыс',
-                phoneLabel: 'Телефондар',
-                phoneDept1: 'Жүріс бөлігі бөлімі',
-                phoneDept2: 'Қозғалтқыш бөлшектері бөлімі',
+                phoneLabel: 'Бөлшек сату бөлімі',
+                wholesaleLabel: 'Көтерме сату бөлімі',
+                phoneDept1: 'WhatsApp',
+                phoneDept2: 'WhatsApp',
                 emailLabel: 'Email',
                 instagramLabel: 'Instagram',
-                messengerLabel: 'WhatsApp және Telegram',
                 locationTitle: 'Car City',
                 locationName: '1 қабат 112 бутик',
                 locationFloor: '',
@@ -2084,22 +2141,17 @@
                 logoSubtitle: 'RELIABLE PARTS SUPPLIER',
                 navHome: 'Home',
                 navServices: 'Services',
+                navDelivery: 'Delivery',
                 navAdvantages: 'Advantages',
                 navBrands: 'Brands',
                 navContact: 'Contact',
                 heroTitle: 'Reliable supplier of spare parts for KIA, Hyundai and Chevrolet',
                 heroSubtitle: 'We work directly with trusted manufacturers.',
                 heroDescription: 'We offer optimal conditions, prompt shipment and support at every stage.',
-                btnChassis: 'Chassis',
-                btnEngine: 'Engine Parts',
+                btnRetail: 'Retail sales department',
+                btnWholesale: 'Wholesale sales department',
                 btnLocation: 'Location',
-                btnWhatsApp: 'Send message',
-                btnLocation: 'Location',
-                btnLocationSub: 'View on map',
-                btnBrands: 'Our brands',
-                btnBrandsSub: 'KIA • Hyundai • Chevrolet',
                 scrollDown: 'SCROLL',
-                heroCta: 'Contact us',
                 servicesTitle: 'Our services',
                 serviceTitle1: 'Chassis',
                 serviceText1: 'Complete range of suspension and steering parts',
@@ -2107,23 +2159,31 @@
                 serviceText2: 'All components for engine repair and maintenance',
                 serviceTitle3: 'Quality Guarantee',
                 serviceText3: 'Official warranty on all parts',
-                advantagesTitle: 'Why choose us',
-                advTitle1: 'Original Parts',
-                advText1: 'Working with verified manufacturers',
-                advTitle2: 'Fast Shipping',
-                advText2: 'Large assortment in stock',
-                advTitle3: 'Quality Guarantee',
-                advText3: 'Official warranty on all parts',
-                advTitle4: 'Support',
-                advText4: 'Consultation at every stage',
+                deliveryTitle: 'Free delivery conditions',
+                deliveryAlmaty: 'Free delivery within Almaty city for orders from this amount',
+                deliveryRegion: 'Free delivery within Almaty region for orders from this amount',
+                deliveryInternational: 'Free delivery within Kazakhstan, to Tashkent and Bishkek for orders from this amount',
+                advantagesTitle: 'Our advantages',
+                advTitle1: 'More than 22000 items',
+                advText1: 'in stock',
+                advTitle2: 'Made to order',
+                advText2: 'minimum time',
+                advTitle3: 'Professional selection',
+                advText3: 'of auto parts',
+                advTitle4: 'Any payment method',
+                advText4: 'cash, cashless, cards',
+                advTitle5: 'Complete set of documents',
+                advText5: 'for all goods',
+                advTitle6: 'Installation warranty',
+                advText6: 'quality confirmed',
                 brandsTitle: 'Our brands',
                 contactTitle: 'Contacts',
-                phoneLabel: 'Phones',
-                phoneDept1: 'Chassis department',
-                phoneDept2: 'Engine parts department',
+                phoneLabel: 'Retail sales department',
+                wholesaleLabel: 'Wholesale sales department',
+                phoneDept1: 'WhatsApp',
+                phoneDept2: 'WhatsApp',
                 emailLabel: 'Email',
                 instagramLabel: 'Instagram',
-                messengerLabel: 'WhatsApp and Telegram',
                 locationTitle: 'Car City',
                 locationName: '1st floor boutique 112',
                 locationFloor: '',
@@ -2140,22 +2200,17 @@
                 logoSubtitle: 'GÜVENİLİR YEDEK PARÇA TEDARİKÇİSİ',
                 navHome: 'Ana Sayfa',
                 navServices: 'Hizmetler',
+                navDelivery: 'Teslimat',
                 navAdvantages: 'Avantajlar',
                 navBrands: 'Markalar',
                 navContact: 'İletişim',
                 heroTitle: 'KIA, Hyundai ve Chevrolet için güvenilir yedek parça tedarikçisi',
                 heroSubtitle: 'Güvenilir üreticilerle doğrudan çalışıyoruz.',
                 heroDescription: 'Optimal koşullar, hızlı kargo ve her aşamada destek sunuyoruz.',
-                btnChassis: 'Şasi',
-                btnEngine: 'Motor Parçaları',
+                btnRetail: 'Perakende satış departmanı',
+                btnWholesale: 'Toptan satış departmanı',
                 btnLocation: 'Konum',
-                btnWhatsApp: 'Mesaj gönder',
-                btnLocation: 'Konum',
-                btnLocationSub: 'Haritada göster',
-                btnBrands: 'Markalarımız',
-                btnBrandsSub: 'KIA • Hyundai • Chevrolet',
                 scrollDown: 'AŞAĞI',
-                heroCta: 'Bizimle iletişime geçin',
                 servicesTitle: 'Hizmetlerimiz',
                 serviceTitle1: 'Şasi',
                 serviceText1: 'Süspansiyon ve direksiyon parçalarının tam yelpazesi',
@@ -2163,23 +2218,31 @@
                 serviceText2: 'Motor tamir ve bakımı için tüm bileşenler',
                 serviceTitle3: 'Kalite Garantisi',
                 serviceText3: 'Tüm parçalarda resmi garanti',
-                advantagesTitle: 'Neden bizi seçiyorlar',
-                advTitle1: 'Orijinal Parçalar',
-                advText1: 'Doğrulanmış üreticilerle çalışıyoruz',
-                advTitle2: 'Hızlı Kargo',
-                advText2: 'Stokta geniş ürün yelpazesi',
-                advTitle3: 'Kalite Garantisi',
-                advText3: 'Tüm parçalarda resmi garanti',
-                advTitle4: 'Destek',
-                advText4: 'Her aşamada danışmanlık',
+                deliveryTitle: 'Ücretsiz teslimat koşulları',
+                deliveryAlmaty: 'Bu tutardan sipariş verildiğinde Almatı şehri içinde ücretsiz teslimat',
+                deliveryRegion: 'Bu tutardan sipariş verildiğinde Almatı bölgesi içinde ücretsiz teslimat',
+                deliveryInternational: 'Bu tutardan sipariş verildiğinde Kazakistan içinde, Taşkent ve Bişkek\'e kadar ücretsiz teslimat',
+                advantagesTitle: 'Avantajlarımız',
+                advTitle1: '22000\'den fazla ürün',
+                advText1: 'stokta mevcut',
+                advTitle2: 'Siparişe göre',
+                advText2: 'minimum süre',
+                advTitle3: 'Profesyonel seçim',
+                advText3: 'otomobil parçaları',
+                advTitle4: 'Her ödeme yöntemi',
+                advText4: 'nakit, nakit dışı, kartlar',
+                advTitle5: 'Tam belge seti',
+                advText5: 'tüm ürünler için',
+                advTitle6: 'Montaj garantisi',
+                advText6: 'kalite onaylandı',
                 brandsTitle: 'Markalarımız',
                 contactTitle: 'İletişim',
-                phoneLabel: 'Telefonlar',
-                phoneDept1: 'Şasi departmanı',
-                phoneDept2: 'Motor parçaları departmanı',
+                phoneLabel: 'Perakende satış departmanı',
+                wholesaleLabel: 'Toptan satış departmanı',
+                phoneDept1: 'WhatsApp',
+                phoneDept2: 'WhatsApp',
                 emailLabel: 'E-posta',
                 instagramLabel: 'Instagram',
-                messengerLabel: 'WhatsApp ve Telegram',
                 locationTitle: 'Car City',
                 locationName: '1. kat 112 numaralı butik',
                 locationFloor: '',
@@ -2202,7 +2265,6 @@
                 return storedLang;
             }
             
-            // Varsayılan olarak Rusça döndür
             return 'ru';
         }
 
@@ -2213,7 +2275,7 @@
             currentLang = lang;
             localStorage.setItem('selectedLanguage', lang);
             
-            // Update lang button - bayrak her zaman Kazakistan
+            // Update lang button
             document.getElementById('currentLangFlag').textContent = '🇰🇿';
             document.getElementById('currentLangName').textContent = lang.toUpperCase();
             
@@ -2367,15 +2429,6 @@
                 });
             });
         });
-        
-        // Performance optimization
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js').catch(() => {
-                    // Service worker registration failed - not critical
-                });
-            });
-        }
     </script>
 </body>
 </html>
