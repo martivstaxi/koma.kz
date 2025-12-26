@@ -256,6 +256,11 @@
             letter-spacing: 0.5px;
             color: var(--primary-color);
             transition: color 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .logo-section a:hover .logo-text {
+            color: var(--accent-gold);
         }
 
         .logo-subtitle {
@@ -1767,22 +1772,23 @@
     <header>
         <div class="header-container">
             <div class="logo-section">
-                <div>
+                <a href="#hero" style="text-decoration: none; color: inherit;">
                     <div class="logo-text" data-translate="logoText">КОМА АВТО</div>
                     <div class="logo-subtitle" data-translate="logoSubtitle">НАДЁЖНЫЙ ПОСТАВЩИК ЗАПЧАСТЕЙ</div>
-                </div>
+                </a>
             </div>
             <nav id="navMenu">
-                <ul class="nav-links">
-                    <li><a href="#hero" class="nav-link active" data-translate="navHome">Главная</a></li>
-                    <li><a href="#services" class="nav-link" data-translate="navServices">Услуги</a></li>
-                    <li><a href="#delivery" class="nav-link" data-translate="navDelivery">Доставка</a></li>
-                    <li><a href="#advantages" class="nav-link" data-translate="navAdvantages">Преимущества</a></li>
-                    <li><a href="#brands" class="nav-link" data-translate="navBrands">Бренды</a></li>
-                    <li><a href="#partners" class="nav-link" data-translate="navPartners">Партнёры</a></li>
-                    <li><a href="#contact" class="nav-link" data-translate="navContact">Контакты</a></li>
-                </ul>
-            </nav>
+                <nav id="navMenu">
+                    <ul class="nav-links">
+                        <li><a href="#hero" class="nav-link active" data-translate="navHome">Главная</a></li>
+                        <li><a href="#services" class="nav-link" data-translate="navServices">Услуги</a></li>
+                        <li><a href="#delivery" class="nav-link" data-translate="navDelivery">Доставка</a></li>
+                        <li><a href="#advantages" class="nav-link" data-translate="navAdvantages">Преимущества</a></li>
+                        <li><a href="#brands" class="nav-link" data-translate="navBrands">Бренды</a></li>
+                        <li><a href="#partners" class="nav-link" data-translate="navPartners">Партнёры</a></li>
+                        <li><a href="#contact" class="nav-link" data-translate="navContact">Контакты</a></li>
+                    </ul>
+                </nav>
             <!-- Language Selector -->
             <div class="lang-selector">
                 <button class="lang-btn" id="langBtn">
@@ -2140,7 +2146,6 @@
                 name: 'Русский',
                 logoText: 'КОМА АВТО',
                 logoSubtitle: 'НАДЁЖНЫЙ ПОСТАВЩИК ЗАПЧАСТЕЙ',
-                navHome: 'Главная',
                 navServices: 'Услуги',
                 navDelivery: 'Доставка',
                 navAdvantages: 'Преимущества',
@@ -2202,7 +2207,6 @@
                 name: 'Қазақша',
                 logoText: 'КОМА АВТО',
                 logoSubtitle: 'СЕНІМДІ БӨЛШЕКТЕР ЖЕТКІЗУШІ',
-                navHome: 'Басты бет',
                 navServices: 'Қызметтер',
                 navDelivery: 'Жеткізу',
                 navAdvantages: 'Артықшылықтар',
@@ -2264,7 +2268,6 @@
                 name: 'English',
                 logoText: 'KOMA AUTO',
                 logoSubtitle: 'RELIABLE PARTS SUPPLIER',
-                navHome: 'Home',
                 navServices: 'Services',
                 navDelivery: 'Delivery',
                 navAdvantages: 'Advantages',
@@ -2326,7 +2329,6 @@
                 name: 'Türkçe',
                 logoText: 'KOMA AUTO',
                 logoSubtitle: 'GÜVENİLİR YEDEK PARÇA TEDARİKÇİSİ',
-                navHome: 'Ana Sayfa',
                 navServices: 'Hizmetler',
                 navDelivery: 'Teslimat',
                 navAdvantages: 'Avantajlar',
